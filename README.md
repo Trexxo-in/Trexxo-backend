@@ -12,6 +12,9 @@ cd Trexxo-backend
 
 ```
 
+
+Generate service account pair from firebase and this json file add on token folder named `firebase_token.json`
+
 ## For WebSocket
 
 ```bash
