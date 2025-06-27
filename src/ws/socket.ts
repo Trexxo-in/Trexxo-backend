@@ -9,17 +9,12 @@ export default function Socket_Init(io: Server<ClientToServer, ServerToClient, D
      
      socket.on('activeDriver', async (data)=>{
       const {id,name,longitude,langitude}=data 
-      let hex=h3.latLngToCell(langitude,longitude,9)
+      let hex=h3.latLngToCell(Number(langitude),Number(longitude),9)
       let res=  await addActiveDriver(id,name,{langitude:langitude.toString(),longitude:longitude.toString(),hex},Date.now())
       console.log(res)
      })
 
-    //  socket.on('activeDriver', async (data)=>{
-    //   const {id,name,longitude,langitude}=data 
-    //   let hex=h3.latLngToCell(langitude,longitude,9)
-    //   let res=  await addActiveDriver(id,name,{langitude:langitude.toString(),longitude:longitude.toString(),hex},Date.now())
-    //   console.log(res)
-    //  })
+  
      /***
       * Disconnected this socket
       * 

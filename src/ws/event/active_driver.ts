@@ -1,9 +1,9 @@
 import { activeDriver } from "../db/model"
 import { Point } from "../types"
 
-const addActiveDriver = async (id: string, name: string, location: Point, time: number=Date.now(), isOnline: boolean = true) => {
+const addActiveDriver = async (id: string, name: string, location: Point, time: number = Date.now(), isOnline: boolean = true) => {
     try {
-         await activeDriver.push({
+        await activeDriver.push({
             lat: location.langitude,
             hex: location.hex,
             lon: location.longitude,
